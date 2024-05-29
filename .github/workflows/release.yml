@@ -35,9 +35,21 @@ jobs:
       with:
         context: .
         push: true
-        tags: rancher/rke2-upgrade:${{ env.GIT_TAG }}
+        tags: kbrighton/rke2-upgrade:${{ env.GIT_TAG }}
         file: Dockerfile
         platforms: linux/amd64
         build-args: |
           TAG=${{ github.ref_name }}
           ARCH=amd64
+
+    - name: Build container image
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        push: true
+        tags: kbrighton/rke2-upgrade:${{ env.GIT_TAG }}
+        file: Dockerfile
+        platforms: linux/arm64
+        build-args: |
+          TAG=${{ github.ref_name }}
+          ARCH=arm64
