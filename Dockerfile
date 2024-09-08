@@ -1,6 +1,7 @@
 ARG ALPINE=alpine:3.18
-ARG TARGETARCH
 FROM ${ALPINE} AS verify
+
+ARG TARGETARCH
 ARG TAG
 WORKDIR /verify
 ADD https://github.com/rancher/rke2/releases/download/${TAG}/sha256sum-${TARGETARCH}.txt .
