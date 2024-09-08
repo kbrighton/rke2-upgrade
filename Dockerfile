@@ -1,4 +1,5 @@
 ARG ALPINE=alpine:3.18
+ARG TARGETARCH
 FROM ${ALPINE} AS verify
 ARG TAG
 WORKDIR /verify
