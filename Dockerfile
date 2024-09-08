@@ -34,3 +34,4 @@ COPY scripts/semver-parse.sh /bin/semver-parse.sh
 COPY --from=verify /verify/kubectl /usr/local/bin/kubectl
 ENTRYPOINT ["/bin/upgrade.sh"]
 CMD ["upgrade"]
+
